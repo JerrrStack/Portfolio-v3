@@ -264,8 +264,8 @@ function Header() {
             <Button
               className={classes.secondaryBtn}
               disableElevation
-              href="/assets/CV/CV.pdf"
-              download
+              href={profile.resumeUrl}
+              download={profile.resumeDownloadName}
               component="a"
             >
               Download CV

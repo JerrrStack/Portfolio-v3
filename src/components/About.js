@@ -121,8 +121,8 @@ function About() {
           <Button
             className={classes.cvBtn}
             variant="outlined"
-            href="/assets/CV/CV.pdf"
-            download
+            href={profile.resumeUrl}
+            download={profile.resumeDownloadName}
             component="a"
           >
             Download resume

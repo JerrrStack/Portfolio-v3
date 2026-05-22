@@ -1,5 +1,13 @@
 const EMAIL = "johnjeromebernal@gmail.com";
 
+const RESUME_FILENAME = "John Jerome Bernal - Resume -.pdf";
+
+/** Public URL for the resume PDF in public/assets/CV/ */
+export const resumeUrl = `/assets/CV/${encodeURIComponent(RESUME_FILENAME)}`;
+
+/** Suggested filename when visitors download the resume */
+export const resumeDownloadName = "John-Jerome-Bernal-Resume.pdf";
+
 /** Opens Gmail compose in the browser (user must be signed into Google). */
 export const gmailComposeUrl = ({ to = EMAIL, subject = "", body = "" } = {}) => {
   let url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}`;
@@ -45,6 +53,8 @@ export const profile = {
   github: "https://github.com/JerrrStack",
   githubHandle: "JerrrStack",
   linkedin: "https://www.linkedin.com/in/john-jerome-bernal-561821212",
+  resumeUrl,
+  resumeDownloadName,
   aboutHeading: "Open to what's next",
   aboutSubtitle:
     "Interested in new opportunities, fresh challenges, and learning wherever the work takes me.",
