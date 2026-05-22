@@ -43,7 +43,7 @@ A modern, dark-themed personal portfolio built with **Create React App**. Showca
 
 ### Prerequisites
 
-- **Node.js** 18.x recommended (Node 17+ needs the OpenSSL flag below)
+- **Node.js** 24.x (Vercel) or 18+ locally (OpenSSL flag required for react-scripts 4)
 
 ### Install & run
 
@@ -64,14 +64,9 @@ npm run build
 
 Serve the `build/` folder (e.g. `npx serve -s build`).
 
-### Node 17+ on Windows
+### Node 17+ (OpenSSL)
 
-Scripts already set `NODE_OPTIONS=--openssl-legacy-provider` for `npm start` and `npm run build`. On macOS/Linux, use:
-
-```bash
-export NODE_OPTIONS=--openssl-legacy-provider
-npm start
-```
+`npm start` and `npm run build` use `cross-env` to set `NODE_OPTIONS=--openssl-legacy-provider` (required for Create React App 4 on modern Node).
 
 ## 📁 Project structure
 
