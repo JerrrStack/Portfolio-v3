@@ -237,6 +237,18 @@ function ContactForm() {
               </a>
             </div>
           </div>
+          <div className={classes.infoRow}>
+            <div className={classes.infoLabel}>LinkedIn</div>
+            <div className={classes.infoValue}>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                linkedin.com/in/john-jerome-bernal-561821212
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className={classes.formCard}>

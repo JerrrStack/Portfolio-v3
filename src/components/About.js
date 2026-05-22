@@ -125,7 +125,7 @@ function About() {
             download
             component="a"
           >
-            Download résumé
+            Download resume
           </Button>
         </div>
       </div>

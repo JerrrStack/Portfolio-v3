@@ -2,6 +2,7 @@ import { Button, Container, makeStyles } from "@material-ui/core";
 import React from "react";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { profile } from "../static/profile";
 import { colors, fonts } from "../theme";
 
@@ -79,6 +80,16 @@ function Footer() {
             aria-label="github"
           >
             <GitHubIcon />
+          </Button>
+          <Button
+            className={classes.iconBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={profile.linkedin}
+            component="a"
+            aria-label="linkedin"
+          >
+            <LinkedInIcon />
           </Button>
         </div>
       </div>

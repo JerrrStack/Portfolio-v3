@@ -15,11 +15,16 @@ const useStyles = makeStyles({
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+    gridTemplateColumns: "repeat(2, minmax(280px, 1fr))",
     gap: "1.5rem",
-    maxWidth: layout.maxWidth,
+    maxWidth: 720,
     margin: "0 auto",
-    padding: "0 1.5rem",
+    padding: "0 1.5rem 2rem",
+    width: "100%",
+    "@media (max-width: 700px)": {
+      gridTemplateColumns: "1fr",
+      maxWidth: layout.maxWidth,
+    },
   },
 });
 

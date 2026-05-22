@@ -87,8 +87,9 @@ public/
 | | |
 |---|---|
 | GitHub | [@JerrrStack](https://github.com/JerrrStack) |
+| LinkedIn | [john-jerome-bernal](https://www.linkedin.com/in/john-jerome-bernal-561821212) |
 | Email | johnjeromebernal@gmail.com |
-| Social demo | [jer-social-media](https://jer-social-media.herokuapp.com/login) |
+| Social demo | [jer-social-media](https://jer-social-media.onrender.com/) |
 | Portfolio V2 | [Jerome-Portfolio-V2](https://github.com/JerrrStack/Jerome-Portfolio-V2) |
 
 ## 📸 Preview

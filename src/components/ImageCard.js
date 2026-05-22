@@ -1,7 +1,6 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "@material-ui/core";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { makeStyles, Button } from "@material-ui/core";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { colors, fonts } from "../theme";
 
 const useStyles = makeStyles({
@@ -20,9 +19,22 @@ const useStyles = makeStyles({
       boxShadow: `0 20px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px ${colors.borderAccent}`,
     },
   },
-  media: {
-    height: 160,
+  mediaWrap: {
+    position: "relative",
+    height: 180,
+    overflow: "hidden",
+    borderBottom: `1px solid ${colors.border}`,
     background: `linear-gradient(145deg, ${colors.bgElevated} 0%, ${colors.bgCardHover} 100%)`,
+  },
+  mediaImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  },
+  mediaFallback: {
+    width: "100%",
+    height: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -31,7 +43,6 @@ const useStyles = makeStyles({
     fontWeight: 700,
     color: colors.accent,
     opacity: 0.5,
-    borderBottom: `1px solid ${colors.border}`,
   },
   body: {
     padding: "1.35rem 1.5rem 1.5rem",
@@ -53,64 +64,140 @@ const useStyles = makeStyles({
     lineHeight: 1.6,
     color: colors.textMuted,
     margin: "0 0 1rem",
+  },
+  techLabel: {
+    fontFamily: fonts.mono,
+    fontSize: "0.68rem",
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: colors.textDim,
+    margin: "0 0 0.5rem",
+  },
+  techWrap: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "0.4rem",
+    marginBottom: "1.25rem",
     flex: 1,
   },
-  link: {
+  techChip: {
     fontFamily: fonts.mono,
-    fontSize: "0.75rem",
-    color: colors.accent,
-    textDecoration: "none",
-    letterSpacing: "0.05em",
+    fontSize: "0.68rem",
+    color: colors.textMuted,
+    border: `1px solid ${colors.border}`,
+    borderRadius: 4,
+    padding: "0.25rem 0.5rem",
+  },
+  actions: {
+    marginTop: "auto",
+  },
+  viewBtn: {
+    fontFamily: fonts.sans,
+    fontWeight: 600,
+    fontSize: "0.85rem",
+    textTransform: "none",
+    borderRadius: 8,
+    padding: "0.5rem 1rem",
+    color: colors.bg,
+    background: colors.gradient,
+    alignSelf: "flex-start",
     "&:hover": {
-      textDecoration: "underline",
+      opacity: 0.92,
+      background: colors.gradient,
     },
   },
+  cardSoon: {
+    borderStyle: "dashed",
+    opacity: 0.92,
+    "&:hover": {
+      transform: "none",
+      boxShadow: "none",
+    },
+  },
+  soonBadge: {
+    fontFamily: fonts.mono,
+    fontSize: "0.72rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: colors.textMuted,
+    border: `1px solid ${colors.border}`,
+    borderRadius: 6,
+    padding: "0.45rem 0.75rem",
+    alignSelf: "flex-start",
+  },
+  soonMedia: {
+    fontFamily: fonts.mono,
+    fontSize: "0.85rem",
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: colors.textDim,
+  },
 });
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 export default function ImageCard({ project }) {
   const classes = useStyles();
   const initial = project.title.charAt(0);
+  const [imgError, setImgError] = useState(false);
+  const showImage = project.imageUrl && !imgError;
+  const isSoon = project.comingSoon;
 
-  const content = (
-    <motion.article
-      className={classes.card}
-      variants={cardVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
+  return (
+    <article
+      className={`${classes.card} ${isSoon ? classes.cardSoon : ""}`}
     >
-      <div className={classes.media} aria-hidden>
-        {initial}
+      <div className={classes.mediaWrap}>
+        {isSoon ? (
+          <div className={classes.mediaFallback}>
+            <span className={classes.soonMedia}>Coming soon</span>
+          </div>
+        ) : showImage ? (
+          <img
+            className={classes.mediaImg}
+            src={project.imageUrl}
+            alt={project.title}
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className={classes.mediaFallback} aria-hidden>
+            {initial}
+          </div>
+        )}
       </div>
       <div className={classes.body}>
         <h3 className={classes.title}>{project.title}</h3>
         <p className={classes.desc}>{project.desc}</p>
-        {project.link ? (
-          <span className={classes.link}>
-            {project.linkLabel || "View project"} →
-          </span>
-        ) : null}
+        {project.technologies && project.technologies.length > 0 && (
+          <>
+            <div className={classes.techLabel}>Technologies used</div>
+            <div className={classes.techWrap}>
+              {project.technologies.map((tech) => (
+                <span key={tech} className={classes.techChip}>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+        <div className={classes.actions}>
+          {isSoon ? (
+            <span className={classes.soonBadge}>In progress</span>
+          ) : (
+            project.link && (
+              <Button
+                className={classes.viewBtn}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                component="a"
+                disableElevation
+                endIcon={<OpenInNewIcon style={{ fontSize: 16 }} />}
+              >
+                {project.linkLabel || "View project"}
+              </Button>
+            )
+          )}
+        </div>
       </div>
-    </motion.article>
-  );
-
-  return project.link ? (
-    <Link
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      underline="none"
-      style={{ display: "block", height: "100%" }}
-    >
-      {content}
-    </Link>
-  ) : (
-    content
+    </article>
   );
 }

@@ -44,6 +44,7 @@ export const profile = {
   emailComposeUrl: gmailComposeUrl({ to: EMAIL }),
   github: "https://github.com/JerrrStack",
   githubHandle: "JerrrStack",
+  linkedin: "https://www.linkedin.com/in/john-jerome-bernal-561821212",
   aboutHeading: "Open to what's next",
   aboutSubtitle:
     "Interested in new opportunities, fresh challenges, and learning wherever the work takes me.",
@@ -177,7 +178,7 @@ export const profile = {
     },
     {
       progressName: "DevOps, Cloud & Tools",
-      progressValue: 84,
+      progressValue: 60,
       tools: [
         "Docker",
         "Amazon Web Services (AWS)",
@@ -190,7 +191,7 @@ export const profile = {
     },
     {
       progressName: "Payments & Integrations",
-      progressValue: 80,
+      progressValue: 40,
       tools: ["Stripe API", "PaymentLite", "Epsilon"],
     },
     {

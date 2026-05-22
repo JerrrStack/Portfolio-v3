@@ -1,24 +1,16 @@
 const projects = [
   {
-    title: "Social Media App",
-    desc: "Personal full-stack project with real-time features—Node.js, Express, React, and Socket.IO.",
-    imageUrl: "/assets/socialmediaproject.jpg",
-    link: "https://jer-social-media.herokuapp.com/login",
-    linkLabel: "Live demo",
+    title: "SayHi",
+    desc: "A social media app where you can post, comment, follow people, and message them in real time.",
+    technologies: ["React", "Node.js", "Express", "Socket.IO", "JavaScript"],
+    imageUrl: "/assets/SayHi.JPG",
+    link: "https://jer-social-media.onrender.com/",
+    linkLabel: "View live demo",
   },
   {
-    title: "Portfolio v3",
-    desc: "This portfolio site—React, Material UI, and a focus on clean layout and responsive design.",
-    imageUrl: "/assets/project.jpg",
-    link: "https://github.com/JerrrStack/Portfolio-v3",
-    linkLabel: "View on GitHub",
-  },
-  {
-    title: "Portfolio V2 (Vue)",
-    desc: "Alternate portfolio built with Vue.js—experimenting with a different stack and structure.",
-    imageUrl: "/assets/project.jpg",
-    link: "https://github.com/JerrrStack/Jerome-Portfolio-V2",
-    linkLabel: "View on GitHub",
+    title: "Incoming personal project",
+    desc: "Something new is in the works—check back soon.",
+    comingSoon: true,
   },
 ];
 
