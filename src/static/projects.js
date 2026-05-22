@@ -2,7 +2,14 @@ const projects = [
   {
     title: "SayHi",
     desc: "A social media app where you can post, comment, follow people, and message them in real time.",
-    technologies: ["React", "Node.js", "Express", "Socket.IO", "JavaScript"],
+    technologies: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+    ],
     imageUrl: "/assets/SayHi.JPG",
     link: "https://jer-social-media.onrender.com/",
     linkLabel: "View live demo",
