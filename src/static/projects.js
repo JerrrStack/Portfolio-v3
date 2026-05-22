@@ -7,10 +7,10 @@ const projects = [
     linkLabel: "Live demo",
   },
   {
-    title: "Portfolio (React)",
+    title: "Portfolio v3",
     desc: "This portfolio site—React, Material UI, and a focus on clean layout and responsive design.",
     imageUrl: "/assets/project.jpg",
-    link: "https://github.com/JerrrStack/jerome-portfolio",
+    link: "https://github.com/JerrrStack/Portfolio-v3",
     linkLabel: "View on GitHub",
   },
   {
