@@ -23,19 +23,19 @@ export const profile = {
     {
       value: "5+",
       label: "Years of experience",
-      detail: "July 2021 – present · professional software at YNS Philippines",
+      detail: "July 2021 – present · professional software development",
     },
     {
-      value: "8+",
-      label: "Production systems shipped",
+      value: "Live",
+      label: "Production experience",
       detail:
-        "ECCUBE e-commerce, online pharmacy, business matching, labor & materials platform, truck dispatch, PDF/e-commerce tooling",
+        "Building and supporting real applications in use—client and product details stay private.",
     },
     {
-      value: "Lead & solo",
-      label: "Ownership on delivery",
+      value: "Team",
+      label: "How I work",
       detail:
-        "Main developer (ECCUBE) · independent build (pharmacy) · lead dev (matching & payments)",
+        "Independent tasks when needed, and collaboration through reviews, Scrum, and careful releases.",
     },
   ],
   contactPreference:
