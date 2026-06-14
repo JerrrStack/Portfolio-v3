@@ -15,9 +15,18 @@ const projects = [
     linkLabel: "View live demo",
   },
   {
-    title: "Incoming personal project",
-    desc: "Something new is in the works—check back soon.",
-    comingSoon: true,
+    title: "Employee Management System",
+    desc: "Simple employee management system with CRUD operations, built with Laravel.",
+    technologies: [
+      "Laravel 10",
+      "PHP 8.2",
+      "MySQL",
+      "JavaScript",
+      "CSS",
+      "Docker",
+    ],
+    link: "https://ems-lrvl.onrender.com/",
+    linkLabel: "View live demo",
   },
 ];
 
