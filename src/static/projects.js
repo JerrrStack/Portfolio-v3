@@ -25,6 +25,7 @@ const projects = [
       "CSS",
       "Docker",
     ],
+    imageUrl: "/assets/EMS.JPG",
     link: "https://ems-lrvl.onrender.com/",
     linkLabel: "View live demo",
   },
